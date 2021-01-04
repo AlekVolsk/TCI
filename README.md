@@ -26,7 +26,6 @@ The plugin executes from the command line solely. Add a Cron job task with an ex
 
 ```
 wget -O '{your domain}/index.php?option=com_ajax&group=system&plugin=tci&method=post&format=raw[additional params]'
-
 ```
 
 The format depends on your hosting/server requirements, but the methodology is identical: a Cron job should execute the command line in a specified period of time.
