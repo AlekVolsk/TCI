@@ -161,6 +161,7 @@ Images from gallery posts, which do not form the Intro Image and Full Article Im
 If the plugin option *Convert hashtags from post to Joomla tags* is enabled -then all found hashtags to be transformed to Joomla tags and will be assigned to the article. Previously existing tags will not be re-created.
 
 If the plugin option *Transform hashtags inside the article content into URLs that leads to tags* is enabled - then all found hashtags will be transformed to URLs that lead to the corresponding tags. In such a way, it is recommended to disable displaying article tags in the article options (or in the com_content component global options).
+
 ---
 
 ### Additional information
