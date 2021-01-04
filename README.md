@@ -2,7 +2,7 @@
 
 ### A system plugin for CMS Joomla! providing import of Telegram posts in Joomla. <br>It is a CLI-solution based on the work of https://tg.i-c-a.su/ service.<br><br>
 
-[![Buy it!](https://img.shields.io/badge/заказать-$75-28A5F5.svg?style=for-the-badge)](https://alekvolsk.pw/ru/#callback)<br><br>
+[![Buy now!](https://img.shields.io/badge/buy_now-$75-28A5F5.svg?style=for-the-badge)](https://alekvolsk.pw/ru/#callback)<br><br>
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
@@ -178,6 +178,6 @@ You can purchase this solution by contacting the author via the submission form 
 
 Before submitting the form, please make sure to fill out your Telegram username, and mention "TCI Order" in the message.
 
-[![Buy now](https://img.shields.io/badge/заказать-$75-28A5F5.svg?style=for-the-badge)](https://alekvolsk.pw/ru/#callback)
+[![Buy now](https://img.shields.io/badge/buy_now-$75-28A5F5.svg?style=for-the-badge)](https://alekvolsk.pw/ru/#callback)
 
 Send PM to the author in Telegram to get product support.
