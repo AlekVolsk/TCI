@@ -6,8 +6,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.01.04-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.1.4-1e87f0.svg?style=for-the-badge)<br><br>
+![Last Update](https://img.shields.io/badge/last_update-2021.01.05-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.2.0-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
@@ -30,6 +30,8 @@ wget -O '{your domain}/index.php?option=com_ajax&group=system&plugin=tci&method=
 
 The format depends on your hosting/server requirements, but the methodology is identical: a Cron job should execute the command line in a specified period of time.
 
+The security key will be automatically generated the first time the plugin settings are saved.
+
 Additionally, you can use the following params in cron job task:
 
 ```
@@ -42,6 +44,8 @@ It can be useful when you want to import data from various Telegram channels to 
 ---
 
 ## Plugin options
+
+**Security Key**. It is necessary to protect the site from possible DDOS attacks. Automatically generated the first time the plugin is saved.
 
 **Telegram server** \*. URL of the service which returns posts from any public Telegram channel in JSON format. The default value is  `https://tg.i-c-a.su/`.
 
