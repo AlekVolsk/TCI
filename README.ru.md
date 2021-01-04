@@ -6,8 +6,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.01.04-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.1.4-1e87f0.svg?style=for-the-badge)
+![Last Update](https://img.shields.io/badge/last_update-2021.01.05-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.2.0-1e87f0.svg?style=for-the-badge)
 
 Плагин совместим с Joomla! 4.
 
@@ -20,9 +20,11 @@
 Плагин вызывается исключительно из командной строки. Создайте cron-запись с периодом выполнения в минутах и значением, указанным в параметре плагина «Период», с адресом:
 
 ```
-wget -O '{ваш домен}/index.php?option=com_ajax&group=system&plugin=tci&method=post&format=raw[дополнительные параметры]'
+wget -O '{ваш домен}/index.php?option=com_ajax&group=system&plugin=tci&method=post&format=raw&key={ключ безопасности}[дополнительные параметры]'
 
 ```
+
+Ключ безопасности будет автоматически сформирован при первом сохранении параметров плагина.
 
 Вы можете дополнительно указать параметры:
 
@@ -35,6 +37,8 @@ wget -O '{ваш домен}/index.php?option=com_ajax&group=system&plugin=tci&m
 ---
 
 ## Параметры плагина
+
+**Ключ безопасности**. Необходим для защиты сайа от возможных DDOS-атак. Автоматически формируется при первом сохранении плагина.
 
 **Телеграм-сервер** \*. URL-адрес сервиса, посредством которого производится получение постов из Telegram. Значение по умолчанию: `https://tg.i-c-a.su/`.
 
