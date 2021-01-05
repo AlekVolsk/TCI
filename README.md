@@ -7,7 +7,7 @@
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
 ![Last Update](https://img.shields.io/badge/last_update-2021.01.05-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.2.0-1e87f0.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.2.1-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
@@ -45,7 +45,7 @@ It can be useful when you want to import data from various Telegram channels to 
 
 ## Plugin options
 
-**Security Key**. It is necessary to protect the site from possible DDOS attacks. Automatically generated the first time the plugin is saved.
+**Security Key**. It is necessary to protect the site from possible DDOS attacks. Automatically generated after you save plugin parameters first time.
 
 **Telegram server** \*. URL of the service which returns posts from any public Telegram channel in JSON format. The default value is  `https://tg.i-c-a.su/`.
 
