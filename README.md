@@ -170,7 +170,7 @@ If the plugin option *Transform hashtags inside the article content into URLs th
 
 ### Additional information
 The plugin generates a monthly log via the core Joomla logging system. The filename is being created using the following mask: `tci_{year-month}.php.log`.
-To view these logs from the Administrator Panel you can use the following component: View logs](https://github.com/AlekVolsk/View-logs/releases/latest).
+To view these logs from the Administrator Panel you can use the following component: [View logs](https://github.com/AlekVolsk/View-logs/releases/latest).
 
 URLs that lead to Youtube video inside already imported articles can be transformed via the following content plugin: [YtVideo](https://github.com/AlekVolsk/ytvideo/releases/latest).
 
