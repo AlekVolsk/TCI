@@ -6,8 +6,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.01.08-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.2.3-1e87f0.svg?style=for-the-badge)
+![Last Update](https://img.shields.io/badge/last_update-2021.01.09-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.2.4-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
@@ -28,7 +28,7 @@ The plugin executes from the command line solely. Add a Cron job task with an ex
 wget -O '{your domain}/index.php?option=com_ajax&group=system&plugin=tci&method=post&format=raw&key={security key}[additional params]'
 ```
 
-The format depends on your hosting/server requirements, but the methodology is identical: a Cron job should execute the command line in a specified period of time.
+The format depends on your hosting/server requirements, but the methodology is identical: a Cron job should execute the command line in a specified period.
 
 The security key will be automatically generated the first time the plugin settings are saved.
 
@@ -53,7 +53,7 @@ It can be useful when you want to import data from various Telegram channels to 
 
 **Limit of received posts per one execution** \*. Set the total number of posts to get from the service. The default value: `10`. *IMPORTANT NOTE: [What is a Telegram post?](#tgpost).*
 
-**The period in minutes during which execution of posts is being processed** \*. The period of time is in minutes. Make sure that the execution period is identical to the plugin settings. E.g. if you set up Cron job execution in 60 minutes, the same param should be set in the plugin option. The default value: `60`.
+**The period in minutes during which execution of posts is being processed** \*. The period is in minutes. Make sure that the execution period is identical to the plugin settings. E.g. if you set up Cron job execution in 60 minutes, the same param should be set in the plugin option. The default value: `60`.
 
 **Process posts that were forwarded from other channels**. Available values: `Yes|No`. The default value: `No`.
 
@@ -61,12 +61,11 @@ It can be useful when you want to import data from various Telegram channels to 
 
 **Articles language**. The default value: for all articles.
 
-**Articles author**. A Joomla user to be assigned as the author of articles imported from Telegram.
-The default value: the default Super Administrator who created the site
+**Articles author**. A Joomla user to be assigned as the author of articles imported from Telegram. The default value: the default Super Administrator who created the site.
 
-**Status of articles during the import**. Available values: `Unpublished|Published`. the default value: `Unpublished`.
+**Status of articles during the import**. Available values: `Unpublished|Published`. The default value: `Unpublished`.
 
-**Add post ID to the end of alias**. It allow importing posts that have the same header. Available values: `Yes|No`. The default value: `No`.
+**Add post ID to the end of alias**. It allows importing posts that have the same header. Available values: `Yes|No`. The default value: `No`.
 
 **Set articles as Featured during import**. Available values: `Yes|No`. The default value: `No`.
 
@@ -75,9 +74,8 @@ The default value: the default Super Administrator who created the site
 **Transform hashtags inside the article to links that leads to Joomla tags**. Available values: `Yes|No`. The default value: `No`.
 This param appears when "Transform Telegram post hashtags to Joomla tags" option is enabled.
 
-**Create Meta-Description**. Available values: `Yes|No`. The default value: `No`. <br>*
-The generation of Meta-Description has a feature*: the description is being created from the first 150 text symbols of Telegram post.
-All iconographic symbols (icons as symbols, emoji) are truncated (ignored), the crop is being processed until the nearest space from the end of the line. If the line is not a complete sentence, then the ellipsis (3 dots) is being added.
+**Create Meta-Description**. Available values: `Yes|No`. The default value: `No`. <br>
+*The generation of Meta-Description has a feature*. The description is being created from the first 150 text symbols of Telegram post. All iconographic symbols (icons as symbols, emoji) are truncated (ignored), the crop is being processed until the nearest space from the end of the line. If the line is not a complete sentence, then the ellipsis (3 dots) is being added.
 
 **Folder for images to be taken from Telegram posts**. A Joomla folder to be used to save images from imported posts. The default value: `images` root folder in the site root. *IMPORTANT NOTE: [The nuances of Joomla article creation](#jarticle).*
 
@@ -87,7 +85,7 @@ All iconographic symbols (icons as symbols, emoji) are truncated (ignored), the 
 
 - `Keep inside the article`,
 - `First image – inside the Intro Image and Full Article Image`,
-- `First image – inside the Intro Image, the second image - inside Full Article Image`.
+- `First image – inside the Intro Image, the second image – inside Full Article Image`.
 
 The default image: `Keep inside the article`. *IMPORTANT NOTE: [The nuances of Joomla article creation](#jarticle).*
 
@@ -107,7 +105,7 @@ The correct specification of any of the CLI parameters below overrides the value
 
 **period** – The period for what posts are being imported from the channel at the moment of execution. The minutes should be specified as a number.
 
-**catid** – Category ID, can be specified as a number. You can find ID in the Joomla Administrator Panel - the list of com_content categories.
+**catid** – Category ID, can be specified as a number. You can find ID in the Joomla Administrator Panel – the list of com_content categories.
 
 **lang** – Article language. It can be specified as the system constant (example: `en-GB`, `ru-RU`) or `*` symbol to specify **For all languages** value.
 
@@ -126,7 +124,7 @@ This service has the following limits:
 - No more than 100 posts for one query.
 - Temporary ban for any error. Example: invalid channel name or the channel is private.
 
-The service has a free source code (the URL is available on the official page) and allows running own service at the own server which is highly recommended to do if you need importing of a huge amount of posts for a small period of time.
+The service has a free source code (the URL is available on the official page) and allows running own service at the own server which is highly recommended to do if you need importing of a huge amount of posts for a small period.
 
 The ban has a cumulative time: an attempt to access the service while the ban is in effect automatically doubles the ban duration!
 
@@ -162,9 +160,9 @@ If there is only one paragraph it completely creates Article Intro.
 
 Images from gallery posts, which do not form the Intro Image and Full Article Image of the article, are being added only to the Full Article and each image is wrapped in a separate paragraph. No editing actions are required to do with the images.
 
-If the plugin option *Convert hashtags from post to Joomla tags* is enabled -then all found hashtags to be transformed to Joomla tags and will be assigned to the article. Previously existing tags will not be re-created.
+If the plugin option *Convert hashtags from post to Joomla tags* is enabled – then all found hashtags to be transformed to Joomla tags and will be assigned to the article. Previously existing tags will not be re-created.
 
-If the plugin option *Transform hashtags inside the article content into URLs that leads to tags* is enabled - then all found hashtags will be transformed to URLs that lead to the corresponding tags. In such a way, it is recommended to disable displaying article tags in the article options (or in the com_content component global options).
+If the plugin option *Transform hashtags inside the article content into URLs that leads to tags* is enabled – then all found hashtags will be transformed to URLs that lead to the corresponding tags. In such a way, it is recommended to disable displaying article tags in the article options (or in the com_content component global options).
 
 ---
 
