@@ -6,8 +6,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.01.09-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.2.4-1e87f0.svg?style=for-the-badge)
+![Last Update](https://img.shields.io/badge/last_update-2021.02.07-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.2.5-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
@@ -66,6 +66,8 @@ It can be useful when you want to import data from various Telegram channels to 
 **Status of articles during the import**. Available values: `Unpublished|Published`. The default value: `Unpublished`.
 
 **Add post ID to the end of alias**. It allows importing posts that have the same header. Available values: `Yes|No`. The default value: `No`.
+
+**Skip posts without text content**. Allows you to skip image posts and galleries if they lack a text content. Available values: `Yes|No`. The default value: `No`.
 
 **Set articles as Featured during import**. Available values: `Yes|No`. The default value: `No`.
 
@@ -138,7 +140,7 @@ Why is it important? Because the default service has a request limit. Images are
 
 ### What types of posts are ignored?
 
-The system posts of Telegram, hidden posts (hidden by the channel administrator), voting posts are ignored. Videos from gallery posts are also ignored.
+The system posts of Telegram, hidden posts (hidden by the channel administrator), voting posts, audio and video are ignored. Videos from gallery posts are also ignored.
 
 ---
 
