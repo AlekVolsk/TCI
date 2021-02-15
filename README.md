@@ -6,8 +6,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.02.10-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.2.6-1e87f0.svg?style=for-the-badge)
+![Last Update](https://img.shields.io/badge/last_update-2021.02.15-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.3.0-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
@@ -93,6 +93,14 @@ The default image: `Keep inside the article`. *IMPORTANT NOTE: [The nuances of J
 
 **Add caption text for image**. It works for Intro Image and Full Article Image only. Available values: `Yes|No`. The default value: `No`.
 
+**Include comments from the post**. Allows you to connect live comments attached to the post. If you have authorization from the telegram, it allows you to fully use the telegram comment system on the site. The connection is made by downloading the corresponding Telegram API script.
+Connection is made only in cases when at the time of import the post had active comments, and the structure with information about the post is saved in the field of comments to the article.
+In the markup of the article, the comment block is wrapped in a container with the `telegram-comments` class. Connection of a dark theme is supported. The plugin does not contain its own styles for the design of the comment block.
+Accepted values: `Yes | No`. Default value: `None`.
+
+**Dark theme**. Connecting a dark theme for the comments block. Accepted values: `Yes | No`. Default value: `None`.
+This param appears when "Include comments from the post" option is enabled.
+
 ---
 
 ## CLI parameters
@@ -166,6 +174,16 @@ If the plugin option *Convert hashtags from post to Joomla tags* is enabled – 
 
 If the plugin option *Transform hashtags inside the article content into URLs that leads to tags* is enabled – then all found hashtags will be transformed to URLs that lead to the corresponding tags. In such a way, it is recommended to disable displaying article tags in the article options (or in the com_content component global options).
 
+The "Note" field stores the JSON structure about the telegram post, which can be used by third-party extensions when working with the material. The structure is an object named `tci` with a set of fields. The structure fields contain:
+
+- `channelid` - channel id,
+- `channelname` - system channel name,
+- `channeltitle` - public title of the channel,
+- `postid` - post id in the channel,
+- `replies` - presence of comments attached to the post.
+
+This structure is necessary for the correct operation of the functionality of connecting the comment block. Also, it can, without changing, use other custom third-party solutions.
+
 ---
 
 ### Additional information
@@ -177,6 +195,8 @@ URLs that lead to Youtube video inside already imported articles can be transfor
 ---
 
 **The price of this solution: $75 USD**
+
+You can pay in any currency of the world, except bitcoins, at the exchange rate at the time of payment.
 
 You can purchase this solution by contacting the author via the submission form on the author's personal website.
 
