@@ -7,7 +7,7 @@
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
 ![Last Update](https://img.shields.io/badge/last_update-2021.02.15-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.3.0-1e87f0.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.3.1-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
@@ -183,6 +183,34 @@ The "Note" field stores the JSON structure about the telegram post, which can be
 - `replies` - presence of comments attached to the post.
 
 This structure is necessary for the correct operation of the functionality of connecting the comment block. Also, it can, without changing, use other custom third-party solutions.
+
+---
+
+### Pre-processing the content of the material before saving it
+
+You can process the content of the material before it is saved by a third party plugin on the `onContentBeforeData` event.
+
+The plugin accepts 2 parameters as input:
+
+- `(string) $ context` - the value of `com_plugins.plugin.system.tci` is passed, you should check the context exclusively for this value to know for sure that you are processing the content of the material imported by this plugin;
+- `(array) $ data = []` - standard array of the material object, passed *not by reference*.
+
+The return value is expected as an array of a material object for these changes to be applied.
+
+An example of implementing an event function:
+
+```php
+public function onContentBeforeData($context, $data = [])
+{
+    if ($context !== 'com_plugins.plugin.system.tci') {
+        return false;
+    }
+
+    // change your's data
+
+    return $data;
+}
+```
 
 ---
 

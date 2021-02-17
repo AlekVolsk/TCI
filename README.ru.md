@@ -7,7 +7,7 @@
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
 ![Last Update](https://img.shields.io/badge/last_update-2021.02.15-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.3.0-1e87f0.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.3.1-1e87f0.svg?style=for-the-badge)
 
 Плагин совместим с Joomla! 4.
 
@@ -175,6 +175,34 @@ wget -O '{ваш домен}/index.php?option=com_ajax&group=system&plugin=tci&m
 - `replies` – наличие прикреплённых к посту комментариев.
 
 Эта структура необходима для корректной работы функционала подключения блока комментариев. Также её могут, не изменяя, использовать иные кастомые сторонние решения.
+
+---
+
+### Предварительная обработка контента материала перед его сохранением
+
+Вы можете обработать контент материала перед его сохранением сторонним плагином на событие `onContentBeforeData`.
+
+Плагин принимает на входе 2 параметра:
+
+- `(string) $context` – передаётся значение `com_plugins.plugin.system.tci`, вы должны проверить контекст исключительно на это значение, чтобы точно знать, что вы обрабатываете контент материала, импортируемого данным плагином;
+- `(array) $data = []` – стандартный массив объекта материала, передаётся *не по ссылке*.
+
+Ожидается возвращаемое значение в виде массива объекта материала, чтобы эти изменения были применены.
+
+Пример реализации функции события:
+
+```php
+public function onContentBeforeData($context, $data = [])
+{
+    if ($context !== 'com_plugins.plugin.system.tci') {
+        return false;
+    }
+
+    // change your's data
+
+    return $data;
+}
+```
 
 ---
 
