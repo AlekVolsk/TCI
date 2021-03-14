@@ -174,13 +174,13 @@ If the plugin option *Convert hashtags from post to Joomla tags* is enabled – 
 
 If the plugin option *Transform hashtags inside the article content into URLs that leads to tags* is enabled – then all found hashtags will be transformed to URLs that lead to the corresponding tags. In such a way, it is recommended to disable displaying article tags in the article options (or in the com_content component global options).
 
-The "Note" field stores the JSON structure about the telegram post, which can be used by third-party extensions when working with the material. The structure is an object named `tci` with a set of fields. The structure fields contain:
+JSON structure that consist of Telegram post is saved in the «Note» field of Joomla article. This data can be taken by the 3rd party extension which operates with com_content. The structure consist of an object with tci name that has a set of fields. The structure fields consist of:
 
-- `channelid` - channel id,
-- `channelname` - system channel name,
-- `channeltitle` - public title of the channel,
-- `postid` - post id in the channel,
-- `replies` - presence of comments attached to the post.
+- `channelid` – channel ID,
+- `channelname` – channel system name,
+- `channeltitle` – public title of the channel,
+- `postid` – post ID in channel,
+- `replies` – comments attached to the post.
 
 This structure is necessary for the correct operation of the functionality of connecting the comment block. Also, it can, without changing, use other custom third-party solutions.
 
@@ -190,12 +190,14 @@ This structure is necessary for the correct operation of the functionality of co
 
 You can process the content of the material before it is saved by a third party plugin on the `onContentBeforeData` event.
 
-The plugin accepts 2 parameters as input:
+IMPORTANT: The plugin must be systemic! The content plugin works out once for the session and in the end only 1 material will be processed, the rest will be skipped: the resinuate plugin will simply do not start, so the Joomla is arranged.
 
-- `(string) $ context` - the value of `com_plugins.plugin.system.tci` is passed, you should check the context exclusively for this value to know for sure that you are processing the content of the material imported by this plugin;
-- `(array) $ data = []` - standard array of the material object, passed *not by reference*.
+The plugin gets 2 params as inputs:
 
-The return value is expected as an array of a material object for these changes to be applied.
+- `(string) $context` – the value `com_plugins.plugin.system.tci` to be sent, you should check the context on this value solely and make sure that the article which is importing by this plugin is being processed;
+- `(array) $data = []` – standard array of article object, not to be send by URL.
+
+The return value is expected as an array of article object for these changes to be applied either false otherwise.
 
 An example of implementing an event function:
 
