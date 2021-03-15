@@ -21,7 +21,7 @@
 Плагин вызывается исключительно из командной строки. Создайте cron-запись с периодом выполнения в минутах и значением, указанным в параметре плагина «Период», с адресом:
 
 ```
-wget -O '{ваш домен}/index.php?option=com_ajax&group=system&plugin=tci&method=post&format=raw&key={ключ безопасности}[дополнительные параметры]'
+wget -q -O -- "{ваш домен}/index.php?option=com_ajax&group=system&plugin=tci&method=post&format=raw&key={ключ безопасности}[дополнительные параметры]"
 
 ```
 

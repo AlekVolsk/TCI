@@ -26,7 +26,7 @@ Specify a system name of the public Telegram channel in the plugin parameters (w
 The plugin executes from the command line solely. Add a Cron job task with an execution period in minutes and use a value that is identical to the plugin param 'Period' and use the following command/URL:
 
 ```
-wget -O '{your domain}/index.php?option=com_ajax&group=system&plugin=tci&method=post&format=raw&key={security key}[additional params]'
+wget -q -O -- "{your domain}/index.php?option=com_ajax&group=system&plugin=tci&method=post&format=raw&key={security key}[additional params]"
 ```
 
 The format depends on your hosting/server requirements, but the methodology is identical: a Cron job should execute the command line in a specified period.
