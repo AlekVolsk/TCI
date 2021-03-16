@@ -7,8 +7,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.03.15-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.3.2-1e87f0.svg?style=for-the-badge)
+![Last Update](https://img.shields.io/badge/last_update-2021.03.16-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.3.3-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
@@ -150,6 +150,8 @@ Why is it important? Because the default service has a request limit. Images are
 ### What types of posts are ignored?
 
 The system posts of Telegram, hidden posts (hidden by the channel administrator), voting posts, audio and video are ignored. Videos from gallery posts are also ignored.
+
+Posts-files without a description are also ignored, but posts with a description without files are imported, a link to the post in Telegram is added to the files in the content of the material so that the file can be downloaded directly from the post. The content of the link contains the name of the file.
 
 ---
 

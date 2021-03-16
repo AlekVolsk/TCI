@@ -7,8 +7,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.03.15-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.3.2-1e87f0.svg?style=for-the-badge)
+![Last Update](https://img.shields.io/badge/last_update-2021.03.16-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.3.3-1e87f0.svg?style=for-the-badge)
 
 Плагин совместим с Joomla! 4.
 
@@ -142,6 +142,8 @@ wget -q -O -- "{ваш домен}/index.php?option=com_ajax&group=system&plugin
 ### Какие типы постов игнорируются
 
 Игнорируются системные посты самого Telegram, скрытые посты (скрываются администратором канала), посты-голосования, аудиозаписи и видеоролики. Также игнорируются видеоролики из постов-галерей.
+
+Посты-файлы без описания также игнорируются, но импортируются посты с описанием без файлов, на файлы в контент материала дописывается ссылка на пост в Telegram для возможности скачивания файла непосредственно из поста. Контент ссылки содержит имя файла.
 
 ---
 
