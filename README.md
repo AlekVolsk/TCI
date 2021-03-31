@@ -7,8 +7,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.03.16-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.3.3-1e87f0.svg?style=for-the-badge)
+![Last Update](https://img.shields.io/badge/last_update-2021.04.01-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.4.0-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
@@ -46,43 +46,48 @@ It can be useful when you want to import data from various Telegram channels to 
 
 ## Plugin options
 
+#### Basic
+
+**Telegram server** \*. URL of the service which returns posts from any public Telegram channel in JSON format. The The default value is  `https://tg.i-c-a.su/`.
+
 **Security Key**. It is necessary to protect the site from possible DDOS attacks. Automatically generated after you save plugin parameters first time.
 
-**Telegram server** \*. URL of the service which returns posts from any public Telegram channel in JSON format. The default value is  `https://tg.i-c-a.su/`.
+**Debug mode**. A mode in which post data is requested only once and written to the `tci_{channel_name}.json` file in the Joomla cache folder. If a file exists again from the specified channel, json is not requested, the file is cleared by the standard Joomla cache clearing method. The parameter affects all channels, incl. specified through a request in cli-requests.<br>
+This mode can be useful when developing a [content preprocessing plugin](#contentbeforedata).
+
+#### Telegram channel
 
 **Channel system name** \*. A system name of the Telegram channel (without @ symbol) you want to import posts from.
 
-**Limit of received posts per one execution** \*. Set the total number of posts to get from the service. The default value: `10`. *IMPORTANT NOTE: [What is a Telegram post?](#tgpost).*
+**Limit of received posts per one execution** \*. Set the total number of posts to get from the service. The The default value: `10`. *IMPORTANT NOTE: [What is a Telegram post?](#tgpost).*
 
-**The period in minutes during which execution of posts is being processed** \*. The period is in minutes. Make sure that the execution period is identical to the plugin settings. E.g. if you set up Cron job execution in 60 minutes, the same param should be set in the plugin option. The default value: `60`.
+**The period in minutes during which execution of posts is being processed** \*. The period is in minutes. Make sure that the execution period is identical to the plugin settings. E.g. if you set up Cron job execution in 60 minutes, the same param should be set in the plugin option. The The default value: `60`.
 
-**Process posts that were forwarded from other channels**. Available values: `Yes|No`. The default value: `No`.
+#### Joomla article
 
-**Articles category** \*. The category of Joomla articles to which the posts should be imported. The default value: `Uncategorized` (without category, ID=2).
+**Articles category** \*. The category of Joomla articles to which the posts should be imported. The The default value: `Uncategorized` (without category, ID=2).
 
-**Articles language**. The default value: for all articles.
+**Articles language**. The The default value: for all articles.
 
-**Articles author**. A Joomla user to be assigned as the author of articles imported from Telegram. The default value: the default Super Administrator who created the site.
+**Articles author**. A Joomla user to be assigned as the author of articles imported from Telegram. The The default value: the default Super Administrator who created the site.
 
-**Status of articles during the import**. Available values: `Unpublished|Published`. The default value: `Unpublished`.
+**Status of articles during the import**. Available values: `Unpublished|Published`. The The default value: `Unpublished`.
 
-**Add post ID to the end of alias**. It allows importing posts that have the same header. Available values: `Yes|No`. The default value: `No`.
+**Add post ID to the end of alias**. It allows importing posts that have the same header. Available values: `Yes|No`. The The default value: `No`.
 
-**Skip posts without text content**. Allows you to skip image posts and galleries if they lack a text content. Available values: `Yes|No`. The default value: `No`.
+**Set articles as Featured during import**. Available values: `Yes|No`. The The default value: `No`.
 
-**Set articles as Featured during import**. Available values: `Yes|No`. The default value: `No`.
+**Transform Telegram post hashtags to Joomla tags**. Available values `Yes|No`. The The default value: `No`.
 
-**Transform Telegram post hashtags to Joomla tags**. Available values `Yes|No`. The default value: `No`.
-
-**Transform hashtags inside the article to links that leads to Joomla tags**. Available values: `Yes|No`. The default value: `No`.
+**Transform hashtags inside the article to links that leads to Joomla tags**. Available values: `Yes|No`. The The default value: `No`.
 This param appears when "Transform Telegram post hashtags to Joomla tags" option is enabled.
 
-**Create Meta-Description**. Available values: `Yes|No`. The default value: `No`. <br>
+**Create Meta-Description**. Available values: `Yes|No`. The The default value: `No`. <br>
 *The generation of Meta-Description has a feature*. The description is being created from the first 150 text symbols of Telegram post. All iconographic symbols (icons as symbols, emoji) are truncated (ignored), the crop is being processed until the nearest space from the end of the line. If the line is not a complete sentence, then the ellipsis (3 dots) is being added.
 
-**Folder for images to be taken from Telegram posts**. A Joomla folder to be used to save images from imported posts. The default value: `images` root folder in the site root. *IMPORTANT NOTE: [The nuances of Joomla article creation](#jarticle).*
+**Folder for images to be taken from Telegram posts**. A Joomla folder to be used to save images from imported posts. The The default value: `images` root folder in the site root. *IMPORTANT NOTE: [The nuances of Joomla article creation](#jarticle).*
 
-**Action if the image download process is invalid**. Available values: `Miss image|Save original URL`. The default value: `Miss image`. *IMPORTANT NOTE: [The nuances of Joomla article creation](#jarticle).*
+**Action if the image download process is invalid**. Available values: `Miss image|Save original URL`. The The default value: `Miss image`. *IMPORTANT NOTE: [The nuances of Joomla article creation](#jarticle).*
 
 **Actions with images of Telegram posts-galleries**. Available values:
 
@@ -92,15 +97,37 @@ This param appears when "Transform Telegram post hashtags to Joomla tags" option
 
 The default image: `Keep inside the article`. *IMPORTANT NOTE: [The nuances of Joomla article creation](#jarticle).*
 
-**Add caption text for image**. It works for Intro Image and Full Article Image only. Available values: `Yes|No`. The default value: `No`.
+**Add caption text for image**. It works for Intro Image and Full Article Image only. Available values: `Yes|No`. The The default value: `No`.
 
 **Include comments from the post**. Allows you to connect live comments attached to the post. If you have authorization from the telegram, it allows you to fully use the telegram comment system on the site. The connection is made by downloading the corresponding Telegram API script.
 Connection is made only in cases when at the time of import the post had active comments, and the structure with information about the post is saved in the field of comments to the article.
 In the markup of the article, the comment block is wrapped in a container with the `telegram-comments` class. Connection of a dark theme is supported. The plugin does not contain its own styles for the design of the comment block.
-Accepted values: `Yes | No`. Default value: `None`.
+Available values: `Yes|No`. The default value: `None`.
 
-**Dark theme**. Connecting a dark theme for the comments block. Accepted values: `Yes | No`. Default value: `None`.
+**Dark theme**. Connecting a dark theme for the comments block. Available values: `Yes|No`. The default value: `None`.
 This param appears when "Include comments from the post" option is enabled.
+
+#### Parameters of conditions for skipping imported posts
+
+*Note: the order of processing skip conditions is performed in the sequence of listing the following parameters.*
+
+**Process posts that were forwarded from other channels**. Available values: `Yes|No`. The The default value: `No`.
+
+**Skip media posts without text content**. Specifically: image posts, file posts. Available values: `Yes|No`. The default value: `None`.
+
+**Skip posts of grouped content (gallery posts)**. Available values: `Yes|No`. The default value: `None`.
+
+**Skip posts without text content**. Allows you to skip image posts and galleries if they lack a text content. Available values: `Yes|No`. The The default value: `No`.
+
+**Skip posts if text content is no more than characters**. Including spaces and punctuation marks. Enter 0 to remove restrictions. The default value: `0`.
+
+**Skip posts if text content is no more than paragraphs**. The counting of the number of paragraphs is carried out before the formation of the heading of the material. Enter 0 to remove restrictions. The default value: `0`.
+
+**Skip voting posts**. Available values: `Yes|No`. The default value: `None`.
+
+**Skip posts with buttons**. Buttons can be either voting buttons or link buttons. Available values: `Yes|No`. The default value: `None`.
+
+**Skip file posts**. Available values: `Yes|No`. The default value: `None`.
 
 ---
 
@@ -189,7 +216,7 @@ This structure is necessary for the correct operation of the functionality of co
 
 ---
 
-### Pre-processing the content of the material before saving it
+### <a name="contentbeforedata"></a>Pre-processing the content of the material before saving it
 
 You can process the content of the material before it is saved by a third party plugin on the `onContentBeforeData` event.
 
