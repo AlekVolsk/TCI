@@ -53,6 +53,8 @@ It can be useful when you want to import data from various Telegram channels to 
 **Security Key**. It is necessary to protect the site from possible DDOS attacks. Automatically generated after you save plugin parameters first time.
 
 **Debug mode**. A mode in which post data is requested only once and written to the `tci_{channel_name}.json` file in the Joomla cache folder. If a file exists again from the specified channel, json is not requested, the file is cleared by the standard Joomla cache clearing method. The parameter affects all channels, incl. specified through a request in cli-requests.<br>
+In debug mode, posts are always created unpublished.<br>
+In debug mode, a message is written to the log about enabling debug mode and information about the reasons for skipping the import of each post according to the plugin parameters.<br>
 This mode can be useful when developing a [content preprocessing plugin](#contentbeforedata).
 
 #### Telegram channel
