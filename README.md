@@ -7,8 +7,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.04.01-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.4.0-1e87f0.svg?style=for-the-badge)
+![Last Update](https://img.shields.io/badge/last_update-2021.04.03-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.4.1-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
