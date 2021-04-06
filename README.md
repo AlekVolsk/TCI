@@ -7,8 +7,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.04.03-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.4.1-1e87f0.svg?style=for-the-badge)
+![Last Update](https://img.shields.io/badge/last_update-2021.04.06-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.5.0-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
@@ -97,16 +97,16 @@ This param appears when "Transform Telegram post hashtags to Joomla tags" option
 - `First image – inside the Intro Image and Full Article Image`,
 - `First image – inside the Intro Image, the second image – inside Full Article Image`.
 
-The default image: `Keep inside the article`. *IMPORTANT NOTE: [The nuances of Joomla article creation](#jarticle).*
+The default value: `Keep inside the article`. *IMPORTANT NOTE: [The nuances of Joomla article creation](#jarticle).*
 
 **Add caption text for image**. It works for Intro Image and Full Article Image only. Available values: `Yes|No`. The The default value: `No`.
 
 **Include comments from the post**. Allows you to connect live comments attached to the post. If you have authorization from the telegram, it allows you to fully use the telegram comment system on the site. The connection is made by downloading the corresponding Telegram API script.
 Connection is made only in cases when at the time of import the post had active comments, and the structure with information about the post is saved in the field of comments to the article.
 In the markup of the article, the comment block is wrapped in a container with the `telegram-comments` class. Connection of a dark theme is supported. The plugin does not contain its own styles for the design of the comment block.
-Available values: `Yes|No`. The default value: `None`.
+Available values: `Yes|No`. The default value: `No`.
 
-**Dark theme**. Connecting a dark theme for the comments block. Available values: `Yes|No`. The default value: `None`.
+**Dark theme**. Connecting a dark theme for the comments block. Available values: `Yes|No`. The default value: `No`.
 This param appears when "Include comments from the post" option is enabled.
 
 #### Parameters of conditions for skipping imported posts
@@ -115,9 +115,9 @@ This param appears when "Include comments from the post" option is enabled.
 
 **Process posts that were forwarded from other channels**. Available values: `Yes|No`. The The default value: `No`.
 
-**Skip media posts without text content**. Specifically: image posts, file posts. Available values: `Yes|No`. The default value: `None`.
+**Skip media posts without text content**. Specifically: image posts, file posts. Available values: `Yes|No`. The default value: `No`.
 
-**Skip posts of grouped content (gallery posts)**. Available values: `Yes|No`. The default value: `None`.
+**Skip posts of grouped content (gallery posts)**. Available values: `Yes|No`. The default value: `No`.
 
 **Skip posts without text content**. Allows you to skip image posts and galleries if they lack a text content. Available values: `Yes|No`. The The default value: `No`.
 
@@ -125,11 +125,21 @@ This param appears when "Include comments from the post" option is enabled.
 
 **Skip posts if text content is no more than paragraphs**. The counting of the number of paragraphs is carried out before the formation of the heading of the material. Enter 0 to remove restrictions. The default value: `0`.
 
-**Skip voting posts**. Available values: `Yes|No`. The default value: `None`.
+**Skip voting posts**. Available values: `Yes|No`. The default value: `No`.
 
-**Skip posts with buttons**. Buttons can be either voting buttons or link buttons. Available values: `Yes|No`. The default value: `None`.
+**Skip posts with buttons**. Buttons can be either voting buttons or link buttons. Available values: `Yes|No`. The default value: `No`.
 
-**Skip file posts**. Available values: `Yes|No`. The default value: `None`.
+**Skip video post, incl. video from gallery's post**. Available values: `Yes|No`. The default value: `Yes`. *Video download is possible only if the file size does not exceed 50mb. If this threshold is exceeded, the video file will not be loaded, there will be no references to it.*
+
+**Skip file posts**. Available values: `Yes|No`. The default value: `Yes`. *File download is possible only if the file size does not exceed 50mb. Upon exceeding this threshold, a link to the post in Telegram will be saved.*
+
+**File action**. Available values:
+
+- `Save link to Telegram post`,
+- `Download file from Telegram`.
+
+The default value: `Save link to Telegram post`.
+This param appears when "Skip file posts" option is disabled.
 
 ---
 
@@ -178,9 +188,7 @@ Why is it important? Because the default service has a request limit. Images are
 
 ### What types of posts are ignored?
 
-The system posts of Telegram, hidden posts (hidden by the channel administrator), voting posts, audio and video are ignored. Videos from gallery posts are also ignored.
-
-Posts-files without a description are also ignored, but posts with a description without files are imported, a link to the post in Telegram is added to the files in the content of the material so that the file can be downloaded directly from the post. The content of the link contains the name of the file.
+The system posts of Telegram, hidden posts (hidden by the channel administrator), post-stickers are ignored. Audio recordings are treated as ordinary unknown files.
 
 ---
 
