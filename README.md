@@ -7,8 +7,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.04.06-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.5.0-1e87f0.svg?style=for-the-badge)
+![Last Update](https://img.shields.io/badge/last_update-2021.04.12-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.5.1-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
@@ -52,7 +52,7 @@ It can be useful when you want to import data from various Telegram channels to 
 
 **Security Key**. It is necessary to protect the site from possible DDOS attacks. Automatically generated after you save plugin parameters first time.
 
-**Debug mode**. A mode in which post data is requested only once and written to the `tci_{channel_name}.json` file in the Joomla cache folder. If a file exists again from the specified channel, json is not requested, the file is cleared by the standard Joomla cache clearing method. The parameter affects all channels, incl. specified through a request in cli-requests.<br>
+**Debug mode**. A mode in which post data is requested only once and written to the `tci_{channel_name}.json` file in the Joomla cache folder. If a file exists again from the specified channel, json is not requested, the file is cleared by the standard Joomla cache clearing method. The parameter affects all channels, incl. specified through a request in cli-requests. Do not leave cache files after turning off debug mode!<br>
 In debug mode, posts are always created unpublished.<br>
 In debug mode, a message is written to the log about enabling debug mode and information about the reasons for skipping the import of each post according to the plugin parameters.<br>
 This mode can be useful when developing a [content preprocessing plugin](#contentbeforedata).
@@ -100,6 +100,14 @@ This param appears when "Transform Telegram post hashtags to Joomla tags" option
 The default value: `Keep inside the article`. *IMPORTANT NOTE: [The nuances of Joomla article creation](#jarticle).*
 
 **Add caption text for image**. It works for Intro Image and Full Article Image only. Available values: `Yes|No`. The The default value: `No`.
+
+**Prefix picture folder**. Available values:
+
+- `Don't usage (not recommended)`,
+- `Channel ID`,
+- `Channel name`.
+
+The default value: `Channel ID`.
 
 **Include comments from the post**. Allows you to connect live comments attached to the post. If you have authorization from the telegram, it allows you to fully use the telegram comment system on the site. The connection is made by downloading the corresponding Telegram API script.
 Connection is made only in cases when at the time of import the post had active comments, and the structure with information about the post is saved in the field of comments to the article.
