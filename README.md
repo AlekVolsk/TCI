@@ -7,8 +7,8 @@
 
 ![Joomla](https://img.shields.io/badge/joomla-3.7+-1A3867.svg?style=for-the-badge)
 ![Php](https://img.shields.io/badge/php-5.6+-8892BF.svg?style=for-the-badge)
-![Last Update](https://img.shields.io/badge/last_update-2021.04.12-28A5F5.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.5.1-1e87f0.svg?style=for-the-badge)
+![Last Update](https://img.shields.io/badge/last_update-2021.05.05-28A5F5.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.5.2-1e87f0.svg?style=for-the-badge)
 
 The plugin is compatible with Joomla! 4.
 
@@ -127,6 +127,8 @@ This param appears when "Include comments from the post" option is enabled.
 
 **Skip posts of grouped content (gallery posts)**. Available values: `Yes|No`. The default value: `No`.
 
+**Skip posts w/o images (including galleries)**. In the case of a post-gallery, the condition will work only if an intro/full image is saved in the article. Available values: `Yes|No`. The The default value: `No`.
+
 **Skip posts without text content**. Allows you to skip image posts and galleries if they lack a text content. Available values: `Yes|No`. The The default value: `No`.
 
 **Skip posts if text content is no more than characters**. Including spaces and punctuation marks. Enter 0 to remove restrictions. The default value: `0`.
@@ -166,6 +168,8 @@ The correct specification of any of the CLI parameters below overrides the value
 **catid** – Category ID, can be specified as a number. You can find ID in the Joomla Administrator Panel – the list of com_content categories.
 
 **lang** – Article language. It can be specified as the system constant (example: `en-GB`, `ru-RU`) or `*` symbol to specify **For all languages** value.
+
+**publiched** – Published article. It should be specified as a number, the `0` value – No, `1` – Yes. Any other values are being ignored and the value to be taken from the plugin parameter. The parameter is ignored in debug mode.
 
 **featured** – Set articles as Featured. It should be specified as a number, the `0` value – No, `1` – Yes. Any other values are being ignored and the value to be taken from the plugin parameter.
 
