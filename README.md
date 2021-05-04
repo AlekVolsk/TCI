@@ -36,7 +36,7 @@ The security key will be automatically generated the first time the plugin setti
 Additionally, you can use the following params in cron job task:
 
 ```
-&channel={name of the channel}&limit={limit of posts}&period={execution period in minutes}&catid={Category ID of com_content}&lang={content language}&featured={0|1}&userid={Joomla user ID}
+&channel={name of the channel}&limit={limit of posts}&period={execution period in minutes}&catid={Category ID of com_content}&lang={content language}&publiched={0|1}&featured={0|1}&userid={Joomla user ID}
 ```
 
 This additional prefix can be used in the case when you need to import posts from custom channels that are not the same as the channel from default plugin settings.
